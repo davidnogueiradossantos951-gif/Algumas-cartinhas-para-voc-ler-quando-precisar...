@@ -234,3 +234,72 @@ function abrirCarta2() {
         location.reload();
     });
 }
+function iniciarCarta3() {
+    const telaCartas = document.querySelector(".tela-cartas");
+
+    telaCartas.innerHTML = `
+        <div class="missao quiz-missao">
+            <h1>Antes de abrir essa carta... 🤭</h1>
+
+            <p id="perguntaQuiz"></p>
+
+            <div id="opcoesQuiz"></div>
+
+            <p id="resultadoQuiz"></p>
+        </div>
+    `;
+
+    let perguntaAtual = 0;
+
+    const perguntas = [
+        {
+            pergunta: "Qual apelido você costuma me chamar? 🤭",
+            opcoes: ["Ken", "Barbie", "Príncipe", "Amor"],
+            resposta: "Barbie"
+        },
+        {
+            pergunta: "O que eu mais gosto de fazer com você? 💙",
+            opcoes: ["Ficar longe", "Passar tempo com você", "Te ignorar", "Brigar"],
+            resposta: "Passar tempo com você"
+        },
+        {
+            pergunta: "O que acontece quando você fica brava comigo? 🤨",
+            opcoes: ["Eu finjo que não ligo", "Eu tento fazer as pazes", "Eu desapareço", "Eu comemoro"],
+            resposta: "Eu tento fazer as pazes"
+        }
+    ];
+
+    mostrarPergunta();
+
+    function mostrarPergunta() {
+        const pergunta = perguntas[perguntaAtual];
+
+        document.getElementById("perguntaQuiz").innerText = pergunta.pergunta;
+
+        const opcoes = document.getElementById("opcoesQuiz");
+        opcoes.innerHTML = "";
+
+        pergunta.opcoes.forEach(function(opcao) {
+            const botao = document.createElement("button");
+
+            botao.innerText = opcao;
+
+            botao.addEventListener("click", function() {
+                if (opcao === pergunta.resposta) {
+                    perguntaAtual++;
+
+                    if (perguntaAtual < perguntas.length) {
+                        mostrarPergunta();
+                    } else {
+                        abrirCarta3();
+                    }
+                } else {
+                    document.getElementById("resultadoQuiz").innerText =
+                        "Hmm... acho que você precisa pensar melhor 🤨😂";
+                }
+            });
+
+            opcoes.appendChild(botao);
+        });
+    }
+}
