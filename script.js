@@ -19,10 +19,11 @@ botaoComecar.addEventListener("click", function() {
                 <button id="botaoCarta1">Desbloquear</button>
             </div>
 
-            <div class="carta bloqueada">
-                <span>🔒</span>
-                <h2>Abra quando sentir saudade de mim</h2>
-            </div>
+            <div class="carta bloqueada" id="carta2">
+    <span>🔒</span>
+    <h2>Abra quando sentir saudade de mim</h2>
+    <button id="botaoCarta2">Desbloquear</button>
+</div>
 
             <div class="carta bloqueada">
                 <span>🔒</span>
@@ -71,6 +72,11 @@ botaoComecar.addEventListener("click", function() {
     document.getElementById("botaoCarta1").addEventListener("click", function() {
         iniciarCarta1();
     });
+    
+    document.getElementById("botaoCarta2").addEventListener("click", function() {
+    iniciarCarta2();
+});
+    
 });
 
 
@@ -133,6 +139,74 @@ function abrirCarta1() {
     `;
 
     document.getElementById("voltarCartas").addEventListener("click", function() {
+        location.reload();
+    });
+}
+function iniciarCarta2() {
+    const telaCartas = document.querySelector(".tela-cartas");
+
+    telaCartas.innerHTML = `
+        <div class="missao senha-missao">
+            <h1>Essa carta está protegida por uma senha... 🔒</h1>
+
+            <p>
+                Dica: é um apelido que você costuma me chamar 🤭💙
+            </p>
+
+            <input 
+                type="text" 
+                id="senhaCarta2" 
+                placeholder="Digite a senha..."
+            >
+
+            <button id="botaoSenha2">
+                Desbloquear 💌
+            </button>
+
+            <p id="mensagemSenha2"></p>
+        </div>
+    `;
+
+    document.getElementById("botaoSenha2").addEventListener("click", function() {
+        const senha = document.getElementById("senhaCarta2").value;
+        const mensagem = document.getElementById("mensagemSenha2");
+
+        if (senha.toLowerCase().trim() === "barbie") {
+            mensagem.innerHTML = "Senha correta! 🤭💙<br>Eu sabia que você conseguiria...";
+
+            setTimeout(function() {
+                abrirCarta2();
+            }, 1800);
+
+        } else {
+            mensagem.innerHTML = "Hmm... senha incorreta 🤨<br>Pensa em um apelido que você costuma me chamar 🤭";
+        }
+    });
+}
+function abrirCarta2() {
+    const telaCartas = document.querySelector(".tela-cartas");
+
+    telaCartas.innerHTML = `
+        <div class="carta-aberta">
+            <div class="envelope">
+                💌
+            </div>
+
+            <div class="mensagem-carta">
+                <h1>Para quando você estiver com saudade de mim 💙</h1>
+
+                <p>
+                    Aqui vai entrar a mensagem da Carta 2.
+                </p>
+
+                <button id="voltarCartas2">
+                    Voltar para as cartinhas 💙
+                </button>
+            </div>
+        </div>
+    `;
+
+    document.getElementById("voltarCartas2").addEventListener("click", function() {
         location.reload();
     });
 }
