@@ -220,3 +220,36 @@ h2 {
         transform: translateY(0);
     }
 }
+.senha-missao input {
+    display: block;
+    width: 80%;
+    max-width: 350px;
+    margin: 25px auto 15px;
+    padding: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 25px;
+    background: rgba(255, 255, 255, 0.08);
+    color: white;
+    text-align: center;
+    font-size: 16px;
+    outline: none;
+}
+
+.senha-missao input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.senha-missao button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 25px;
+    background: white;
+    color: #07152f;
+    font-family: Georgia, serif;
+    cursor: pointer;
+}
+
+#mensagemSenha2 {
+    margin-top: 20px;
+    min-height: 50px;
+}
