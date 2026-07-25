@@ -1028,15 +1028,31 @@ function iniciarCarta8() {
 
          function verificarBau() {
 
-    const bau = document.getElementById("bauMinecraft");
-
     const jogadorX = posicaoX;
     const jogadorY = posicaoY;
 
-    // O baú fica na última posição do mapa
     const bauX = 4;
     const bauY = 3;
 
+    // Diamantes
+    if (jogadorX === 2 && jogadorY === 0) {
+        document.getElementById("diamante1").style.display = "none";
+    }
+
+    if (jogadorX === 2 && jogadorY === 2) {
+        document.getElementById("diamante2").style.display = "none";
+    }
+
+    // Flores
+    if (jogadorX === 0 && jogadorY === 2) {
+        document.getElementById("flor1").style.display = "none";
+    }
+
+    if (jogadorX === 3 && jogadorY === 1) {
+        document.getElementById("flor2").style.display = "none";
+    }
+
+    // Verificar o baú
     if (jogadorX === bauX && jogadorY === bauY) {
 
         jogoConcluido = true;
