@@ -85,6 +85,7 @@ botaoComecar.addEventListener("click", function() {
     iniciarCarta4();
 });
 
+});
 
 function iniciarCarta1() {
     const telaCartas = document.querySelector(".tela-cartas");
