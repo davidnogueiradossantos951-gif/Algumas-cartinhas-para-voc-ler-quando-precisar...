@@ -410,21 +410,26 @@ h2 {
     margin-top: 20px;
     font-size: 20px;
 }
+
 #areaEmojis {
     position: fixed;
-    inset: 0;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
     pointer-events: none;
     overflow: hidden;
+    z-index: 5;
 }
 
 .emoji-caindo {
-    position: absolute;
+    position: fixed;
     top: -60px;
     font-size: 36px;
     cursor: pointer;
     pointer-events: auto;
-    animation: cairEmoji 5s linear forwards;
     user-select: none;
+    animation: cairEmoji 5s linear forwards;
     transition: transform 0.2s;
 }
 
