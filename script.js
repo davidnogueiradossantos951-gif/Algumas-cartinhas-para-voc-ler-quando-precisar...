@@ -1272,6 +1272,8 @@ function iniciarCarta9() {
             <div id="coracaoAmor">❤️</div>
 
             <p id="contadorAmor">0%</p>
+            
+            <p id="mensagemAmor"></p>
 
         </div>
     `;
@@ -1290,6 +1292,17 @@ function iniciarCarta9() {
 
         document.getElementById("contadorAmor").innerText =
             Math.round(porcentagem) + "%";
+
+        if (cliquesAmor === cliquesNecessarios) {
+
+    document.getElementById("mensagemAmor").innerHTML =
+        "Você chegou aos 100%... ❤️✨<br><br>" +
+        "Mas talvez esse número ainda seja pequeno demais para medir o quanto eu te amo. 🥺💙";
+
+    setTimeout(function() {
+        abrirCarta9();
+    }, 3000);
+        }
 
         coracao.style.transform = "scale(1.3)";
 
