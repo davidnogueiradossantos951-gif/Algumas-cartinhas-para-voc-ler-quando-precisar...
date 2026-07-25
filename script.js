@@ -14,7 +14,7 @@ botaoComecar.addEventListener("click", function() {
             <div class="carta bloqueada" id="carta1">
                 <span>🔒</span>
                 <h2>Abra quando estiver triste</h2>
-                <button onclick="iniciarCarta1()">Desbloquear</button>
+                <button id="botaoCarta1">Desbloquear</button>
             </div>
 
             <div class="carta bloqueada">
@@ -65,7 +65,13 @@ botaoComecar.addEventListener("click", function() {
     `;
 
     document.body.appendChild(telaCartas);
+
+    document.getElementById("botaoCarta1").addEventListener("click", function() {
+        iniciarCarta1();
+    });
 });
+
+
 function iniciarCarta1() {
     const telaCartas = document.querySelector(".tela-cartas");
 
@@ -87,6 +93,7 @@ function iniciarCarta1() {
     });
 }
 
+
 function abrirCarta1() {
     const telaCartas = document.querySelector(".tela-cartas");
 
@@ -98,15 +105,13 @@ function abrirCarta1() {
                 Aqui vai entrar a mensagem especial que você quer escrever para ela.
             </p>
 
-            <button onclick="voltarParaCartas()">
+            <button id="voltarCartas">
                 Voltar para as cartinhas 💙
             </button>
         </div>
     `;
-}
 
-function voltarParaCartas() {
-    location.reload();
+    document.getElementById("voltarCartas").addEventListener("click", function() {
+        location.reload();
+    });
 }
-
-window.iniciarCarta1 = iniciarCarta1;
