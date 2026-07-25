@@ -9,7 +9,10 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #07152f;
+    background:
+        radial-gradient(circle at 20% 20%, rgba(40, 80, 160, 0.25), transparent 30%),
+        radial-gradient(circle at 80% 70%, rgba(70, 100, 200, 0.18), transparent 30%),
+        #07152f;
     color: white;
     font-family: Georgia, serif;
     overflow: hidden;
