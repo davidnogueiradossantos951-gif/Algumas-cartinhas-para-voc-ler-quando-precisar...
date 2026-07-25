@@ -925,8 +925,13 @@ function iniciarCarta8() {
 
                 <div id="jogadorMinecraft">🧍‍♀️</div>
                 
-                <div id="bauMinecraft">📦</div>
-
+                <div id="bauMinecraft">
+    <div class="bau-minecraft">
+        <div class="tampa-bau"></div>
+        <div class="corpo-bau"></div>
+        <div class="fechadura-bau">🔒</div>
+    </div>
+</div>
                 <div class="bloco grama"></div>
                 <div class="bloco grama"></div>
                 <div class="bloco terra"></div>
