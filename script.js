@@ -108,3 +108,5 @@ function abrirCarta1() {
 function voltarParaCartas() {
     location.reload();
 }
+
+window.iniciarCarta1 = iniciarCarta1;
