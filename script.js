@@ -1103,16 +1103,18 @@ if (jogadorX === 3 && jogadorY === 1) {
 
     if (diamantesColetados === 2 && floresColetadas === 2) {
 
-        jogoConcluido = true;
+    if (jogoConcluido) return;
 
-        document.getElementById("mensagemMinecraft").innerHTML =
-            "Você encontrou o baú secreto! 📦✨<br><br>" +
-            "Você coletou todos os itens escondidos pelo mapa! 💎🌸<br><br>" +
-            "Agora sua cartinha está desbloqueada! 💌";
+    jogoConcluido = true;
 
-        setTimeout(function() {
-            abrirCarta8();
-        }, 3000);
+    document.getElementById("mensagemMinecraft").innerHTML =
+        "Você encontrou o baú secreto! 📦✨<br><br>" +
+        "Você coletou todos os itens escondidos pelo mapa! 💎🌸<br><br>" +
+        "Agora sua cartinha está desbloqueada! 💌";
+
+    setTimeout(function() {
+        abrirCarta8();
+    }, 3000);
 
     } else {
 
