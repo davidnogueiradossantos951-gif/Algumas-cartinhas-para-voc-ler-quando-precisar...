@@ -41,10 +41,11 @@ botaoComecar.addEventListener("click", function() {
     <button id="botaoCarta5">Desbloquear</button>
 </div>
 
-            <div class="carta bloqueada">
-                <span>🔒</span>
-                <h2>Abra quando estiver insegura</h2>
-            </div>
+            <div class="carta bloqueada" id="carta6">
+    <span>🔒</span>
+    <h2>Abra quando estiver insegura</h2>
+    <button id="botaoCarta6">Desbloquear</button>
+</div>
 
             <div class="carta bloqueada">
                 <span>🔒</span>
@@ -85,6 +86,9 @@ botaoComecar.addEventListener("click", function() {
 });
    document.getElementById("botaoCarta5").addEventListener("click", function() {
     iniciarCarta5();
+});
+   document.getElementById("botaoCarta6").addEventListener("click", function() {
+    iniciarCarta6();
 });
     
 });
@@ -554,6 +558,168 @@ function abrirCarta5() {
                     Pronto. Agora você acabou de ganhar um abraço meu, mesmo que de longe. 🤗❤️<br><br>
 
                     E quando eu estiver aí com você, pode ter certeza que eu vou compensar todos os abraços que você precisou e eu não pude te dar. 😌💙<br><br>
+
+                    Eu te amo muito, minha Barbie. 🤭❤️
+                </p>
+
+                <button onclick="location.reload()">
+                    Voltar para as cartinhas 💙
+                </button>
+            </div>
+        </div>
+    `;
+}
+function iniciarCarta6() {
+    const telaCartas = document.querySelector(".tela-cartas");
+
+    telaCartas.innerHTML = `
+        <div class="missao">
+            <h1>Missão 6 🔐</h1>
+
+            <p>
+                Algumas frases estão escondendo uma mensagem... 🤫💙<br>
+                Escolha as frases certas para descobrir o que eu quero te dizer.
+            </p>
+
+            <h2 id="etapaCarta6"></h2>
+
+            <div id="opcoesCarta6"></div>
+
+            <p id="mensagemEscondida6"></p>
+
+            <p id="resultadoCarta6"></p>
+        </div>
+    `;
+
+    let etapaAtual = 0;
+
+    const etapas = [
+        {
+            opcoes: [
+                "Você é perfeita e nunca deveria se sentir insegura. ❤️",
+                "Você é alguém que eu escolhi para fazer parte da minha vida. 💙",
+                "Você não precisa de ninguém para ser feliz. 🤍"
+            ],
+            correta: 1,
+            mensagem: "Você é alguém que eu escolhi..."
+        },
+
+        {
+            opcoes: [
+                "Eu gosto de você apenas nos seus melhores dias. 😊",
+                "Eu gosto de você quando você concorda comigo. 🤭",
+                "Eu gosto de você exatamente como você é. ❤️"
+            ],
+            correta: 2,
+            mensagem: "para fazer parte da minha vida, "
+        },
+
+        {
+            opcoes: [
+                "e eu não mudaria quem você é para agradar ninguém. 💙",
+                "e espero que você mude algumas coisas em você. 😅",
+                "e acho que você deveria ser igual a outras pessoas. 🤨"
+            ],
+            correta: 0,
+            mensagem: "porque eu gosto de você exatamente como você é. "
+        },
+
+        {
+            opcoes: [
+                "Mas ainda existem pessoas melhores por aí. 🤨",
+                "E, mesmo quando você não consegue enxergar o seu próprio valor, eu espero que nunca se esqueça do quanto é especial para mim. ❤️",
+                "Então você precisa tentar ser mais parecida com outras pessoas. 😭"
+            ],
+            correta: 1,
+            mensagem: "Você é muito especial para mim. ❤️"
+        }
+    ];
+
+    let mensagemCompleta = "";
+
+    mostrarEtapa();
+
+    function mostrarEtapa() {
+        const etapa = etapas[etapaAtual];
+
+        document.getElementById("etapaCarta6").innerText =
+            "Parte " + (etapaAtual + 1) + " de " + etapas.length + " 🔐";
+
+        const container = document.getElementById("opcoesCarta6");
+        container.innerHTML = "";
+
+        etapa.opcoes.forEach(function(frase, indice) {
+            const botao = document.createElement("button");
+
+            botao.innerText = frase;
+
+            botao.addEventListener("click", function() {
+
+                if (indice === etapa.correta) {
+                    mensagemCompleta += etapa.mensagem;
+
+                    document.getElementById("mensagemEscondida6").innerText =
+                        mensagemCompleta;
+
+                    etapaAtual++;
+
+                    if (etapaAtual < etapas.length) {
+                        setTimeout(function() {
+                            mostrarEtapa();
+                        }, 1200);
+
+                    } else {
+                        document.getElementById("resultadoCarta6").innerHTML =
+                            "Você descobriu a mensagem escondida! 😭💙<br><br>" +
+                            "Agora sua cartinha está desbloqueada 💌";
+
+                        setTimeout(function() {
+                            abrirCarta6();
+                        }, 2000);
+                    }
+
+                } else {
+                    document.getElementById("resultadoCarta6").innerText =
+                        "Hmm... essa não parece ser a frase certa 🤨😂 Tenta de novo!";
+                }
+            });
+
+            container.appendChild(botao);
+        });
+    }
+}
+function abrirCarta6() {
+    const telaCartas = document.querySelector(".tela-cartas");
+
+    telaCartas.innerHTML = `
+        <div class="carta-aberta">
+            <div class="envelope">
+                💌
+            </div>
+
+            <div class="mensagem-carta">
+                <h1>Para quando você estiver insegura 💙</h1>
+
+                <p>
+                    Meu amor,<br><br>
+
+                    Se você está lendo essa carta, provavelmente está se sentindo insegura... então eu queria que você parasse por alguns minutos e lembrasse de uma coisa. ❤️<br><br>
+
+                    Você não precisa ser perfeita para ser amada. Não precisa se comparar com ninguém. Não precisa mudar quem você é para ser suficiente para mim. 💙<br><br>
+
+                    Eu gosto de você exatamente do jeito que você é. Com suas qualidades, seus defeitos, suas manias, seus momentos de insegurança e tudo aquilo que faz você ser você. ❤️<br><br>
+
+                    Talvez existam coisas em você que você não goste muito... mas isso não significa que eu veja essas coisas da mesma forma.<br><br>
+
+                    Às vezes, você pode olhar para si mesma e enxergar apenas aquilo que gostaria de mudar. Mas eu espero que, nesses momentos, você consiga lembrar que eu vejo muito mais do que isso. 🥺💙<br><br>
+
+                    Eu vejo a garota que eu escolhi. A garota que eu gosto. A garota que me faz sorrir e que se tornou tão importante para mim. ❤️<br><br>
+
+                    Então, quando se sentir insegura, lembra disso:<br><br>
+
+                    <strong>Você não precisa ser outra pessoa para ser amada por mim.</strong> 💙<br><br>
+
+                    Eu escolho você exatamente como você é. Hoje, amanhã e todos os dias. 🤍<br><br>
 
                     Eu te amo muito, minha Barbie. 🤭❤️
                 </p>
