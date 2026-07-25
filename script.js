@@ -363,21 +363,39 @@ function iniciarCarta4() {
             <button id="botaoFujao">
                 Clique aqui 💌
             </button>
+
+            <p id="mensagemVitoria"></p>
         </div>
     `;
 
     const botao = document.getElementById("botaoFujao");
+    let tentativas = 0;
 
     function fugir() {
+        tentativas++;
+
+        if (tentativas >= 5) {
+            botao.removeEventListener("mouseover", fugir);
+
+            document.getElementById("mensagemVitoria").innerHTML =
+                "Tá bom, tá bom 😭😂 você venceu!<br>Eu só queria te fazer sorrir 🤭💙";
+
+            botao.innerText = "Abrir cartinha 💌";
+
+            botao.style.position = "static";
+
+            botao.removeEventListener("touchstart", fugir);
+            botao.addEventListener("click", abrirCarta4);
+
+            return;
+        }
+
         const largura = window.innerWidth - botao.offsetWidth - 40;
         const altura = window.innerHeight - botao.offsetHeight - 40;
 
-        const novaPosicaoX = Math.random() * largura;
-        const novaPosicaoY = Math.random() * altura;
-
         botao.style.position = "fixed";
-        botao.style.left = novaPosicaoX + "px";
-        botao.style.top = novaPosicaoY + "px";
+        botao.style.left = Math.random() * largura + "px";
+        botao.style.top = Math.random() * altura + "px";
     }
 
     botao.addEventListener("mouseover", fugir);
@@ -386,8 +404,47 @@ function iniciarCarta4() {
         event.preventDefault();
         fugir();
     });
+    function abrirCarta4() {
+    const telaCartas = document.querySelector(".tela-cartas");
 
-    botao.addEventListener("click", function() {
-        abrirCarta4();
-    });
+    telaCartas.innerHTML = `
+        <div class="carta-aberta">
+            <div class="envelope">💌</div>
+
+            <div class="mensagem-carta">
+                <h1>Para quando você precisar sorrir 😄💙</h1>
+
+                <p>
+                    Meu amor,<br><br>
+
+                    Se você está lendo essa carta, então provavelmente está precisando sorrir um pouquinho... então vamos ver se eu consigo cumprir essa missão 😌💙<br><br>
+
+                    Primeiro: você sabia que é oficialmente proibido ficar triste por muito tempo quando existe alguém tão lindo quanto eu pensando em você? 🤨😂<br><br>
+
+                    Tá bom, talvez essa regra não exista... mas deveria existir 🤭<br><br>
+
+                    Eu queria poder estar aí agora fazendo alguma coisa completamente idiota só para ver você rindo. Provavelmente eu faria alguma besteira, falaria alguma coisa sem sentido ou tentaria te irritar até você não conseguir mais ficar séria 😂❤️<br><br>
+
+                    Mas, caso isso não seja suficiente...<br><br>
+
+                    Lembre-se de que você tem um namorado que te ama muito, que pensa em você mais do que deveria e que provavelmente está sorrindo enquanto escreve essa carta. 🤭💙<br><br>
+
+                    Então sorria, minha Barbie.<br><br>
+
+                    Mesmo que seja só um pouquinho.<br><br>
+
+                    <strong>SORRIA AGORA 😡😂❤️</strong><br><br>
+
+                    Pronto. Agora eu espero que você esteja sorrindo, porque eu fiz essa carta especialmente para isso. 😌💙<br><br>
+
+                    Eu te amo muito.
+                </p>
+
+                <button onclick="location.reload()">
+                    Voltar para as cartinhas 💙
+                </button>
+            </div>
+        </div>
+    `;
+    }
 }
