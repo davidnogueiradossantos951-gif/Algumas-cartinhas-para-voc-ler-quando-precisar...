@@ -1123,26 +1123,32 @@ function iniciarCarta8() {
 
         // VERIFICAR O BAÚ
 
-        if (jogadorX === bauX && jogadorY === bauY) {
+if (jogadorX === bauX && jogadorY === bauY) {
 
-            if (diamantesColetados === 2 && floresColetadas === 2) {
+    if (diamantesColetados === 2 && floresColetadas === 2) {
 
-                if (jogoConcluido) return;
+        if (jogoConcluido) return;
 
-                jogoConcluido = true;
+        jogoConcluido = true;
 
-                document.getElementById("mensagemMinecraft").innerHTML =
-                    "Você encontrou o baú secreto! 📦✨<br><br>" +
-                    "Você coletou todos os itens escondidos pelo mapa! 💎🌸<br><br>" +
-                    "Agora sua cartinha está desbloqueada! 💌";
+        document.getElementById("mensagemMinecraft").innerHTML =
+            "Você encontrou o baú secreto! 📦✨<br><br>" +
+            "Você coletou todos os itens escondidos pelo mapa! 💎🌸<br><br>" +
+            "Agora sua cartinha está desbloqueada! 💌";
 
-            } else {
+        setTimeout(function() {
+            abrirCarta8();
+        }, 3000);
 
-                document.getElementById("mensagemMinecraft").innerHTML =
-                    "Esse baú está trancado! 🔒📦<br><br>" +
-                    "Você ainda precisa encontrar todos os itens escondidos pelo mapa. 🗺️";
-            }
-        }
+    } else {
+
+        document.getElementById("mensagemMinecraft").innerHTML =
+            "Esse baú está trancado! 🔒📦<br><br>" +
+            "Você ainda precisa encontrar todos os itens escondidos pelo mapa. 🗺️";
+
+    }
+
+}
 
     } // FECHA A FUNÇÃO verificarBau()
 
@@ -1197,4 +1203,54 @@ function iniciarCarta8() {
 
     });
 
+}
+function abrirCarta8() {
+
+    const telaCartas = document.querySelector(".tela-cartas");
+
+    telaCartas.innerHTML = `
+        <div class="carta-aberta">
+
+            <div class="envelope">
+                💌
+            </div>
+
+            <div class="mensagem-carta">
+
+                <h1>Para quando você quiser lembrar de nós 💙</h1>
+
+                <p>
+                    Meu amor,<br><br>
+
+                    Se você está lendo essa carta, então você acabou de atravessar todo aquele mapa, encontrar os itens escondidos e finalmente chegar até o nosso baú secreto. ⛏️💎🌸📦<br><br>
+
+                    E eu pensei que não existia uma forma melhor de falar sobre nós do que através de uma pequena aventura. ❤️<br><br>
+
+                    Porque, de certa forma, nosso relacionamento também é assim. A gente vai descobrindo novas coisas um sobre o outro, vivendo momentos diferentes, superando alguns obstáculos e criando memórias que acabam se tornando cada vez mais especiais. 💙<br><br>
+
+                    Talvez um dia a gente olhe para trás e perceba quantas coisas já vivemos juntos. Os momentos simples, as conversas, as brincadeiras, os passeios e todos aqueles momentos que talvez parecessem pequenos, mas que acabaram se tornando importantes para nós. 🥺❤️<br><br>
+
+                    E eu espero que, sempre que você quiser lembrar de nós, você se lembre de tudo que estamos construindo juntos. 💙<br><br>
+
+                    Porque essa história ainda está só começando.<br><br>
+
+                    Ainda existem muitos lugares para conhecer, muitos momentos para viver e muitas memórias para criar ao seu lado. ✨<br><br>
+
+                    Então, quando quiser lembrar de nós, lembra disso:<br><br>
+
+                    <strong>Eu escolheria viver tudo de novo com você. 💙</strong><br><br>
+
+                    E ainda escolheria você. ❤️<br><br>
+
+                    Eu te amo muito, minha Barbie. 🤭💙
+                </p>
+
+                <button onclick="location.reload()">
+                    Voltar para as cartinhas 💙
+                </button>
+
+            </div>
+
+        </div>
+    `;
 }
