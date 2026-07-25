@@ -47,10 +47,11 @@ botaoComecar.addEventListener("click", function() {
     <button id="botaoCarta6">Desbloquear</button>
 </div>
 
-            <div class="carta bloqueada">
-                <span>🔒</span>
-                <h2>Abra quando estiver feliz</h2>
-            </div>
+            <div class="carta bloqueada" id="carta7">
+    <span>🔒</span>
+    <h2>Abra quando estiver feliz</h2>
+    <button id="botaoCarta7">Desbloquear</button>
+</div>
 
             <div class="carta bloqueada">
                 <span>🔒</span>
@@ -89,6 +90,9 @@ botaoComecar.addEventListener("click", function() {
 });
    document.getElementById("botaoCarta6").addEventListener("click", function() {
     iniciarCarta6();
+});
+    document.getElementById("botaoCarta7").addEventListener("click", function() {
+    iniciarCarta7();
 });
     
 });
@@ -724,6 +728,156 @@ function abrirCarta6() {
                     Eu escolho você exatamente como você é. Hoje, amanhã e todos os dias. 🤍<br><br>
 
                     Eu te amo muito, minha Barbie. 🤭❤️
+                </p>
+
+                <button onclick="location.reload()">
+                    Voltar para as cartinhas 💙
+                </button>
+            </div>
+        </div>
+    `;
+}
+function iniciarCarta7() {
+    const telaCartas = document.querySelector(".tela-cartas");
+
+    telaCartas.innerHTML = `
+        <div class="missao jogo-felicidade">
+
+            <h1>Missão 7 🎉</h1>
+
+            <p>
+                Clique nos emojis certos e encha sua barra da felicidade! 😄💙
+            </p>
+
+            <div class="barra-container">
+                <div id="barraFelicidade"></div>
+            </div>
+
+            <p id="contadorFelicidade">
+                0 / 15 emojis certos
+            </p>
+
+            <div id="areaEmojis"></div>
+
+            <p id="resultadoFelicidade"></p>
+
+        </div>
+    `;
+
+    const emojisCertos = ["😊", "🎉", "💙", "✨", "❤️", "😄", "🥳", "🤗"];
+
+    const emojisErrados = ["😭", "😴", "😡", "😐", "😢", "🙄", "🤔", "😪"];
+
+    const todosEmojis = [...emojisCertos, ...emojisErrados];
+
+    let acertos = 0;
+    let felicidade = 0;
+
+    function criarEmoji() {
+        const emoji = document.createElement("div");
+
+        const emojiEscolhido =
+            todosEmojis[Math.floor(Math.random() * todosEmojis.length)];
+
+        emoji.innerText = emojiEscolhido;
+        emoji.className = "emoji-caindo";
+
+        if (emojisCertos.includes(emojiEscolhido)) {
+            emoji.dataset.certo = "true";
+        } else {
+            emoji.dataset.certo = "false";
+        }
+
+        emoji.style.left = Math.random() * 90 + "%";
+
+        document.getElementById("areaEmojis").appendChild(emoji);
+
+        emoji.addEventListener("click", function() {
+
+            if (emoji.dataset.certo === "true") {
+
+                acertos++;
+                felicidade += 7;
+
+                if (felicidade > 100) {
+                    felicidade = 100;
+                }
+
+                document.getElementById("barraFelicidade").style.width =
+                    felicidade + "%";
+
+                document.getElementById("contadorFelicidade").innerText =
+                    acertos + " / 15 emojis certos";
+
+                emoji.remove();
+
+                if (acertos >= 15) {
+    document.getElementById("resultadoFelicidade").innerHTML =
+        "Você encheu a barra da felicidade! 🎉💙✨";
+
+    setTimeout(function() {
+        abrirCarta7();
+    }, 2000);
+                }    
+                }
+
+            } else {
+
+                felicidade -= 5;
+
+                if (felicidade < 0) {
+                    felicidade = 0;
+                }
+
+                document.getElementById("barraFelicidade").style.width =
+                    felicidade + "%";
+
+                document.getElementById("resultadoFelicidade").innerText =
+                    "Ops! Esse emoji era errado 😂";
+
+                emoji.remove();
+            }
+        });
+
+        setTimeout(function() {
+            if (emoji.parentElement) {
+                emoji.remove();
+            }
+        }, 4000);
+    }
+
+    setInterval(function() {
+        criarEmoji();
+    }, 700);
+}
+function abrirCarta7() {
+    const telaCartas = document.querySelector(".tela-cartas");
+
+    telaCartas.innerHTML = `
+        <div class="carta-aberta">
+            <div class="envelope">
+                💌
+            </div>
+
+            <div class="mensagem-carta">
+                <h1>Para quando você estiver feliz 🎉💙</h1>
+
+                <p>
+                    Meu amor,<br><br>
+
+                    Se você está lendo essa carta, espero que esteja tendo um daqueles momentos em que o coração parece ficar mais leve e tudo parece um pouquinho melhor. 😄💙<br><br>
+
+                    E se você está feliz agora, eu queria poder estar aí do seu lado para comemorar com você. Mesmo que seja por uma coisa simples, eu gostaria de poder ver o seu sorriso e fazer parte desse momento. ❤️<br><br>
+
+                    A sua felicidade também me deixa feliz. De verdade. 🥺💙<br><br>
+
+                    Então aproveita esse momento. Sorria, comemore e guarde essa felicidade com carinho. ✨<br><br>
+
+                    E lembra que, sempre que você estiver feliz, eu vou querer estar por perto para comemorar com você. 🎉❤️<br><br>
+
+                    Espero que essa missão tenha conseguido deixar seu dia ainda mais feliz... mesmo que eu tenha feito você ficar caçando emojis pela tela inteira 😂🤭<br><br>
+
+                    Eu te amo muito, minha Barbie. 💙❤️
                 </p>
 
                 <button onclick="location.reload()">
