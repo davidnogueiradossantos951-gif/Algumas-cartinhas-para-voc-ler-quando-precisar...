@@ -1281,7 +1281,7 @@ function iniciarCarta9() {
 
         </div>
     `;
- }
+ 
     let cliquesAmor = 0;
     const cliquesNecessarios = 30;
 
