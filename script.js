@@ -25,10 +25,11 @@ botaoComecar.addEventListener("click", function() {
     <button id="botaoCarta2">Desbloquear</button>
 </div>
 
-            <div class="carta bloqueada">
-                <span>🔒</span>
-                <h2>Abra quando estiver brava comigo</h2>
-            </div>
+            <div class="carta bloqueada" id="carta3">
+    <span>🔒</span>
+    <h2>Abra quando estiver brava comigo</h2>
+    <button id="botaoCarta3">Desbloquear</button>
+</div>
 
             <div class="carta bloqueada">
                 <span>🔒</span>
@@ -75,6 +76,9 @@ botaoComecar.addEventListener("click", function() {
     
     document.getElementById("botaoCarta2").addEventListener("click", function() {
     iniciarCarta2();
+});
+    document.getElementById("botaoCarta3").addEventListener("click", function() {
+    iniciarCarta3();
 });
     
 });
