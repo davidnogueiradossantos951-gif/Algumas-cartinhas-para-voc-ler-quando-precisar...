@@ -976,7 +976,7 @@ function iniciarCarta8() {
     let posicaoX = 0;
     let posicaoY = 0;
 
-    const tamanhoBloco = 80;
+    const tamanhoBloco = 60;
 
 
     // FUNÇÃO PARA MOVIMENTAR O PERSONAGEM
