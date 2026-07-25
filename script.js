@@ -199,7 +199,6 @@ function abrirCarta2() {
             <div class="mensagem-carta">
                 <h1>Para quando você estiver com saudade de mim 💙</h1>
 
-                <p>
                     <p>
     Meu amor,<br><br>
 
@@ -220,7 +219,6 @@ function abrirCarta2() {
     Sua Barbie está sempre aqui. 😌💙<br><br>
 
     Eu te amo muito.
-</p>
                 </p>
 
                 <button id="voltarCartas2">
@@ -302,4 +300,31 @@ function iniciarCarta3() {
             opcoes.appendChild(botao);
         });
     }
+}
+function abrirCarta3() {
+    const telaCartas = document.querySelector(".tela-cartas");
+
+    telaCartas.innerHTML = `
+        <div class="carta-aberta">
+            <div class="envelope">
+                💌
+            </div>
+
+            <div class="mensagem-carta">
+                <h1>Para quando você estiver brava comigo 🤭💙</h1>
+
+                <p>
+                    Aqui vai entrar a mensagem da Carta 3.
+                </p>
+
+                <button id="voltarCartas3">
+                    Voltar para as cartinhas 💙
+                </button>
+            </div>
+        </div>
+    `;
+
+    document.getElementById("voltarCartas3").addEventListener("click", function() {
+        location.reload();
+    });
 }
