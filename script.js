@@ -66,3 +66,45 @@ botaoComecar.addEventListener("click", function() {
 
     document.body.appendChild(telaCartas);
 });
+function iniciarCarta1() {
+    const telaCartas = document.querySelector(".tela-cartas");
+
+    telaCartas.innerHTML = `
+        <div class="missao">
+            <h1>Antes de abrir essa carta... 🤭</h1>
+
+            <p>
+                Existe um coração escondido por aqui ❤️<br>
+                Encontre ele para desbloquear sua cartinha.
+            </p>
+
+            <div id="coracao-escondido">❤️</div>
+        </div>
+    `;
+
+    document.getElementById("coracao-escondido").addEventListener("click", function() {
+        abrirCarta1();
+    });
+}
+
+function abrirCarta1() {
+    const telaCartas = document.querySelector(".tela-cartas");
+
+    telaCartas.innerHTML = `
+        <div class="mensagem-carta">
+            <h1>Para quando você estiver triste 💌</h1>
+
+            <p>
+                Aqui vai entrar a mensagem especial que você quer escrever para ela.
+            </p>
+
+            <button onclick="voltarParaCartas()">
+                Voltar para as cartinhas 💙
+            </button>
+        </div>
+    `;
+}
+
+function voltarParaCartas() {
+    location.reload();
+}
