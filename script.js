@@ -1275,4 +1275,27 @@ function iniciarCarta9() {
 
         </div>
     `;
+    
+    let cliquesAmor = 0;
+    const cliquesNecessarios = 30;
+
+    const coracao = document.getElementById("coracaoAmor");
+
+    coracao.addEventListener("click", function() {
+
+        cliquesAmor++;
+
+        const porcentagem =
+            (cliquesAmor / cliquesNecessarios) * 100;
+
+        document.getElementById("contadorAmor").innerText =
+            Math.round(porcentagem) + "%";
+
+        coracao.style.transform = "scale(1.3)";
+
+        setTimeout(function() {
+            coracao.style.transform = "scale(1)";
+        }, 150);
+
+    });
 }
