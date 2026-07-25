@@ -784,7 +784,9 @@ function iniciarCarta7() {
 
         emoji.innerText = emojiEscolhido;
         emoji.className = "emoji-caindo";
-
+        
+        emoji.style.left = Math.random() * 90 + "%";
+        
         emoji.dataset.certo =
             emojisCertos.includes(emojiEscolhido) ? "true" : "false";
 
