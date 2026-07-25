@@ -922,8 +922,8 @@ function iniciarCarta8() {
             </p>
 
             <div id="mapaMinecraft">
-        
-            <div id="jogadorMinecraft">🧍‍♀️</div>
+
+                <div id="jogadorMinecraft">🧍‍♀️</div>
 
                 <div class="bloco grama"></div>
                 <div class="bloco grama"></div>
@@ -952,15 +952,112 @@ function iniciarCarta8() {
             </div>
 
             <div class="controles-minecraft">
-                <button>⬆️</button>
+
+                <button id="cima">⬆️</button>
 
                 <div>
-                    <button>⬅️</button>
-                    <button>⬇️</button>
-                    <button>➡️</button>
+                    <button id="esquerda">⬅️</button>
+                    <button id="baixo">⬇️</button>
+                    <button id="direita">➡️</button>
                 </div>
+
             </div>
+
+            <p id="mensagemMinecraft"></p>
 
         </div>
     `;
+
+
+    // PERSONAGEM E POSIÇÃO INICIAL
+
+    const jogador = document.getElementById("jogadorMinecraft");
+
+    let posicaoX = 0;
+    let posicaoY = 0;
+
+    const tamanhoBloco = 80;
+
+
+    // FUNÇÃO PARA MOVIMENTAR O PERSONAGEM
+
+    function moverJogador(direcao) {
+
+        if (direcao === "cima" && posicaoY > 0) {
+            posicaoY--;
+        }
+
+        if (direcao === "baixo" && posicaoY < 3) {
+            posicaoY++;
+        }
+
+        if (direcao === "esquerda" && posicaoX > 0) {
+            posicaoX--;
+        }
+
+        if (direcao === "direita" && posicaoX < 4) {
+            posicaoX++;
+        }
+
+        jogador.style.left = (posicaoX * tamanhoBloco) + "px";
+        jogador.style.top = (posicaoY * tamanhoBloco) + "px";
+
+        jogador.style.transform = "scale(1.15)";
+
+        setTimeout(function() {
+            jogador.style.transform = "scale(1)";
+        }, 150);
+    }
+
+
+    // BOTÃO PARA CIMA
+
+    document.getElementById("cima").addEventListener("click", function() {
+        moverJogador("cima");
+    });
+
+
+    // BOTÃO PARA BAIXO
+
+    document.getElementById("baixo").addEventListener("click", function() {
+        moverJogador("baixo");
+    });
+
+
+    // BOTÃO PARA ESQUERDA
+
+    document.getElementById("esquerda").addEventListener("click", function() {
+        moverJogador("esquerda");
+    });
+
+
+    // BOTÃO PARA DIREITA
+
+    document.getElementById("direita").addEventListener("click", function() {
+        moverJogador("direita");
+    });
+
+
+    // MOVIMENTAÇÃO PELO TECLADO TAMBÉM
+
+    document.addEventListener("keydown", function(event) {
+
+        if (event.key === "ArrowUp") {
+            moverJogador("cima");
+        }
+
+        if (event.key === "ArrowDown") {
+            moverJogador("baixo");
+        }
+
+        if (event.key === "ArrowLeft") {
+            moverJogador("esquerda");
+        }
+
+        if (event.key === "ArrowRight") {
+            moverJogador("direita");
+        }
+
+    });
+
 }
