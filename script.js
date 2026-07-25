@@ -920,6 +920,12 @@ function iniciarCarta8() {
                 Bem-vinda ao mundo das nossas memórias... 🗺️<br>
                 Explore o mapa e descubra o que está escondido por aqui.
             </p>
+            
+            <div id="contadorItens">
+    💎 Diamantes: <span id="contadorDiamantes">0</span>/2
+    <br>
+    🌸 Flores: <span id="contadorFlores">0</span>/2
+</div>
 
             <div id="mapaMinecraft">
 
@@ -991,6 +997,9 @@ function iniciarCarta8() {
     let posicaoY = 0;
     let jogoConcluido = false;
 
+    let diamantesColetados = 0;
+    let floresColetadas = 0;
+
     const tamanhoBloco = 60;
 
 
@@ -1034,24 +1043,61 @@ function iniciarCarta8() {
     const bauX = 4;
     const bauY = 3;
 
-    // Diamantes
-    if (jogadorX === 2 && jogadorY === 0) {
-        document.getElementById("diamante1").style.display = "none";
-    }
+    // Diamante 1
+if (jogadorX === 2 && jogadorY === 0) {
+    const diamante = document.getElementById("diamante1");
 
-    if (jogadorX === 2 && jogadorY === 2) {
-        document.getElementById("diamante2").style.display = "none";
-    }
+    if (diamante.style.display !== "none") {
+        diamantesColetados++;
 
-    // Flores
-    if (jogadorX === 0 && jogadorY === 2) {
-        document.getElementById("flor1").style.display = "none";
-    }
+        diamante.style.display = "none";
 
-    if (jogadorX === 3 && jogadorY === 1) {
-        document.getElementById("flor2").style.display = "none";
+        document.getElementById("contadorDiamantes").innerText =
+            diamantesColetados;
     }
+}
 
+// Diamante 2
+if (jogadorX === 2 && jogadorY === 2) {
+    const diamante = document.getElementById("diamante2");
+
+    if (diamante.style.display !== "none") {
+        diamantesColetados++;
+
+        diamante.style.display = "none";
+
+        document.getElementById("contadorDiamantes").innerText =
+            diamantesColetados;
+    }
+}
+
+// Flor 1
+if (jogadorX === 0 && jogadorY === 2) {
+    const flor = document.getElementById("flor1");
+
+    if (flor.style.display !== "none") {
+        floresColetadas++;
+
+        flor.style.display = "none";
+
+        document.getElementById("contadorFlores").innerText =
+            floresColetadas;
+    }
+}
+
+// Flor 2
+if (jogadorX === 3 && jogadorY === 1) {
+    const flor = document.getElementById("flor2");
+
+    if (flor.style.display !== "none") {
+        floresColetadas++;
+
+        flor.style.display = "none";
+
+        document.getElementById("contadorFlores").innerText =
+            floresColetadas;
+    }
+}
     // Verificar o baú
     if (jogadorX === bauX && jogadorY === bauY) {
 
