@@ -53,10 +53,11 @@ botaoComecar.addEventListener("click", function() {
     <button id="botaoCarta7">Desbloquear</button>
 </div>
 
-            <div class="carta bloqueada">
-                <span>🔒</span>
-                <h2>Abra quando quiser lembrar de nós</h2>
-            </div>
+            <div class="carta bloqueada" id="carta8">
+    <span>🔒</span>
+    <h2>Abra quando quiser lembrar de nós</h2>
+    <button id="botaoCarta8">Desbloquear</button>
+</div>
 
             <div class="carta bloqueada">
                 <span>🔒</span>
@@ -93,6 +94,9 @@ botaoComecar.addEventListener("click", function() {
 });
     document.getElementById("botaoCarta7").addEventListener("click", function() {
     iniciarCarta7();
+});
+   document.getElementById("botaoCarta8").addEventListener("click", function() {
+    iniciarCarta8();
 });
     
 });
@@ -901,6 +905,60 @@ function abrirCarta7() {
                     Voltar para as cartinhas 💙
                 </button>
             </div>
+        </div>
+    `;
+}
+function iniciarCarta8() {
+    const telaCartas = document.querySelector(".tela-cartas");
+
+    telaCartas.innerHTML = `
+        <div class="missao minecraft-missao">
+
+            <h1>Missão 8 ⛏️💙</h1>
+
+            <p>
+                Bem-vinda ao mundo das nossas memórias... 🗺️<br>
+                Explore o mapa e descubra o que está escondido por aqui.
+            </p>
+
+            <div id="mapaMinecraft">
+
+                <div class="bloco grama"></div>
+                <div class="bloco grama"></div>
+                <div class="bloco terra"></div>
+                <div class="bloco grama"></div>
+                <div class="bloco pedra"></div>
+
+                <div class="bloco grama"></div>
+                <div class="bloco terra"></div>
+                <div class="bloco grama"></div>
+                <div class="bloco pedra"></div>
+                <div class="bloco grama"></div>
+
+                <div class="bloco pedra"></div>
+                <div class="bloco grama"></div>
+                <div class="bloco terra"></div>
+                <div class="bloco grama"></div>
+                <div class="bloco grama"></div>
+
+                <div class="bloco grama"></div>
+                <div class="bloco pedra"></div>
+                <div class="bloco grama"></div>
+                <div class="bloco terra"></div>
+                <div class="bloco grama"></div>
+
+            </div>
+
+            <div class="controles-minecraft">
+                <button>⬆️</button>
+
+                <div>
+                    <button>⬅️</button>
+                    <button>⬇️</button>
+                    <button>➡️</button>
+                </div>
+            </div>
+
         </div>
     `;
 }
