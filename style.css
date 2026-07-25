@@ -568,6 +568,7 @@ h2 {
 
 #bauMinecraft {
     position: absolute;
+
     left: 80%;
     top: 75%;
 
@@ -578,6 +579,46 @@ h2 {
     align-items: center;
     justify-content: center;
 
-    font-size: 35px;
     z-index: 5;
+}
+
+.bau-minecraft {
+    width: 42px;
+    height: 38px;
+    position: relative;
+    image-rendering: pixelated;
+}
+
+.tampa-bau {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 42px;
+    height: 13px;
+
+    background: #9b5a25;
+    border: 3px solid #4a2814;
+    border-radius: 6px 6px 2px 2px;
+}
+
+.corpo-bau {
+    position: absolute;
+    top: 11px;
+    left: 0;
+
+    width: 42px;
+    height: 27px;
+
+    background: #b87333;
+    border: 3px solid #4a2814;
+}
+
+.fechadura-bau {
+    position: absolute;
+    top: 15px;
+    left: 16px;
+
+    font-size: 10px;
+    z-index: 2;
 }
