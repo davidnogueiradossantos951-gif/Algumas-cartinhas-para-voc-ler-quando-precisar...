@@ -922,6 +922,8 @@ function iniciarCarta8() {
             </p>
 
             <div id="mapaMinecraft">
+        
+            <div id="jogadorMinecraft">🧍‍♀️</div>
 
                 <div class="bloco grama"></div>
                 <div class="bloco grama"></div>
