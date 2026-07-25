@@ -622,3 +622,40 @@ h2 {
     font-size: 10px;
     z-index: 2;
 }
+#diamante1,
+#diamante2,
+#flor1,
+#flor2 {
+    position: absolute;
+
+    width: 20%;
+    height: 25%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 28px;
+
+    z-index: 4;
+}
+
+#diamante1 {
+    left: 40%;
+    top: 0%;
+}
+
+#diamante2 {
+    left: 40%;
+    top: 50%;
+}
+
+#flor1 {
+    left: 0%;
+    top: 50%;
+}
+
+#flor2 {
+    left: 60%;
+    top: 25%;
+}
