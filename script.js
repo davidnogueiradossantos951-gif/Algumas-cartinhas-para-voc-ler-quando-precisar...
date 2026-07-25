@@ -1312,3 +1312,51 @@ function iniciarCarta9() {
 
     });
 }
+function abrirCarta9() {
+    const telaCartas = document.querySelector(".tela-cartas");
+
+    telaCartas.innerHTML = `
+        <div class="carta-aberta">
+
+            <div class="envelope">
+                💌
+            </div>
+
+            <div class="mensagem-carta">
+
+                <h1>Para quando você quiser saber o quanto eu te amo ❤️💙</h1>
+
+                <p>
+                    Meu amor,<br><br>
+
+                    Se você está lendo essa carta, então você acabou de clicar em um coração até ele passar de 100%. 😂❤️<br><br>
+
+                    E, sinceramente... eu acho que isso combina perfeitamente com o que eu sinto por você. 🥺💙<br><br>
+
+                    Porque, mesmo que o contador tenha chegado em 100%, 200% ou até muito mais, ainda não existiria um número grande o suficiente para explicar o quanto eu te amo. ❤️<br><br>
+
+                    Eu poderia tentar contar todos os motivos pelos quais eu amo você, mas provavelmente essa carta ficaria enorme demais. 🤭💙<br><br>
+
+                    Eu amo seu jeito, suas manias, suas brincadeiras, seu sorriso e até aquelas coisas que talvez você nem perceba, mas que fazem você ser exatamente quem é. 🥺❤️<br><br>
+
+                    E quanto mais eu conheço você, mais motivos eu encontro para continuar te amando. 💙<br><br>
+
+                    Então, se algum dia você se perguntar o quanto eu te amo, lembra dessa missão. ❤️<br><br>
+
+                    O contador pode até ter um limite...<br><br>
+
+                    <strong>Mas o meu amor por você não tem. 💙❤️</strong><br><br>
+
+                    Eu te amo muito, minha Barbie. 🤭💙
+
+                </p>
+
+                <button onclick="location.reload()">
+                    Voltar para as cartinhas 💙
+                </button>
+
+            </div>
+
+        </div>
+    `;
+}
