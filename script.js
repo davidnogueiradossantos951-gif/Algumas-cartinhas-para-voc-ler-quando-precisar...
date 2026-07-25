@@ -104,7 +104,23 @@ function abrirCarta1() {
             <h1>Para quando você estiver triste 💌</h1>
 
             <p>
-                Aqui vai entrar a mensagem especial que você quer escrever para ela.
+            
+    Meu amor,<br><br>
+
+    Se você está lendo isso, provavelmente não está tendo um dos seus melhores dias... então, antes de qualquer coisa, queria que você lembrasse de uma coisa: você não precisa passar por tudo sozinha. ❤️<br><br>
+
+    Mesmo que eu não esteja aí do seu lado nesse exato momento, queria poder te dar um abraço bem apertado e ficar com você até tudo ficar um pouquinho melhor.<br><br>
+
+    Eu sei que nem sempre consigo resolver tudo o que você sente, mas quero que saiba que pode contar comigo. Nos dias bons, nos dias ruins, quando estiver feliz, triste, brava ou simplesmente sem vontade de falar com ninguém.<br><br>
+
+    Você é muito importante para mim, e eu espero que nunca se esqueça disso.<br><br>
+
+    Então respira fundo, meu amor. Essa tristeza vai passar. E quando ela passar, eu ainda vou estar aqui. 💙<br><br>
+
+    Agora seca essas lágrimas, minha Barbie 🤭❤️<br><br>
+
+    Eu te amo.
+</p> 
             </p>
 
             <button id="voltarCartas">
