@@ -737,3 +737,124 @@ function abrirCarta6() {
         </div>
     `;
 }
+function iniciarCarta7() {
+    const telaCartas = document.querySelector(".tela-cartas");
+
+    telaCartas.innerHTML = `
+        <div class="missao jogo-felicidade">
+
+            <h1>Missão 7 🎉</h1>
+
+            <p>
+                Clique nos emojis certos e encha sua barra da felicidade! 😄💙
+            </p>
+
+            <div class="barra-container">
+                <div id="barraFelicidade"></div>
+            </div>
+
+            <p id="contadorFelicidade">
+                0 / 15 emojis certos
+            </p>
+
+            <div id="areaEmojis"></div>
+
+            <p id="resultadoFelicidade"></p>
+
+        </div>
+    `;
+
+    const emojisCertos = ["😊", "🎉", "💙", "✨", "❤️", "😄", "🥳", "🤗"];
+    const emojisErrados = ["😭", "😴", "😡", "😐", "😢", "🙄", "🤔", "😪"];
+
+    const todosEmojis = [...emojisCertos, ...emojisErrados];
+
+    let acertos = 0;
+    let felicidade = 0;
+    let jogoAtivo = true;
+
+    function criarEmoji() {
+
+        if (!jogoAtivo) return;
+
+        const emoji = document.createElement("div");
+
+        const emojiEscolhido =
+            todosEmojis[Math.floor(Math.random() * todosEmojis.length)];
+
+        emoji.innerText = emojiEscolhido;
+        emoji.className = "emoji-caindo";
+
+        emoji.dataset.certo =
+            emojisCertos.includes(emojiEscolhido) ? "true" : "false";
+
+        emoji.style.left = Math.random() * 90 + "%";
+
+        document.getElementById("areaEmojis").appendChild(emoji);
+
+        emoji.addEventListener("click", function() {
+
+            if (!jogoAtivo) return;
+
+            if (emoji.dataset.certo === "true") {
+
+                acertos++;
+                felicidade += 100 / 15;
+
+                if (felicidade > 100) {
+                    felicidade = 100;
+                }
+
+                document.getElementById("barraFelicidade").style.width =
+                    felicidade + "%";
+
+                document.getElementById("contadorFelicidade").innerText =
+                    acertos + " / 15 emojis certos";
+
+                emoji.remove();
+
+                if (acertos >= 15) {
+
+                    jogoAtivo = false;
+
+                    document.getElementById("resultadoFelicidade").innerHTML =
+                        "Você encheu a barra da felicidade! 🎉💙✨";
+
+                    setTimeout(function() {
+                        abrirCarta7();
+                    }, 2000);
+                }
+
+            } else {
+
+                felicidade -= 5;
+
+                if (felicidade < 0) {
+                    felicidade = 0;
+                }
+
+                document.getElementById("barraFelicidade").style.width =
+                    felicidade + "%";
+
+                document.getElementById("resultadoFelicidade").innerText =
+                    "Ops! Esse emoji era errado 😂";
+
+                emoji.remove();
+            }
+        });
+
+        setTimeout(function() {
+            if (emoji.parentElement) {
+                emoji.remove();
+            }
+        }, 5000);
+    }
+
+    const intervaloEmojis = setInterval(function() {
+        if (jogoAtivo) {
+            criarEmoji();
+        } else {
+            clearInterval(intervaloEmojis);
+        }
+    }, 700);
+}
