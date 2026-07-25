@@ -1,3 +1,5 @@
+alert("O JavaScript está funcionando!");
+
 const botaoComecar = document.getElementById("comecar");
 
 botaoComecar.addEventListener("click", function() {
