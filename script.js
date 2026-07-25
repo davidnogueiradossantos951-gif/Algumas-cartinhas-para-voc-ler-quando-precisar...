@@ -932,6 +932,13 @@ function iniciarCarta8() {
         <div class="fechadura-bau">🔒</div>
     </div>
 </div>
+
+        <div id="diamante1">💎</div>
+<div id="diamante2">💎</div>
+
+<div id="flor1">🌸</div>
+<div id="flor2">🌸</div>
+
                 <div class="bloco grama"></div>
                 <div class="bloco grama"></div>
                 <div class="bloco terra"></div>
