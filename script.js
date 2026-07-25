@@ -1115,8 +1115,8 @@ if (jogadorX === 3 && jogadorY === 1) {
         document.getElementById("mensagemMinecraft").innerHTML =
             "Esse baú está trancado! 🔒📦<br><br>" +
             "Você ainda precisa encontrar todos os itens escondidos pelo mapa. 🗺️";
-    }
-    }
+      }
+ }
   
     // BOTÃO PARA CIMA
 
