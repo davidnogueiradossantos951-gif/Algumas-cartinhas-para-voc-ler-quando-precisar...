@@ -31,10 +31,11 @@ botaoComecar.addEventListener("click", function() {
     <button id="botaoCarta3">Desbloquear</button>
 </div>
 
-            <div class="carta bloqueada">
-                <span>🔒</span>
-                <h2>Abra quando precisar sorrir</h2>
-            </div>
+            <div class="carta bloqueada" id="carta4">
+    <span>🔒</span>
+    <h2>Abra quando precisar sorrir</h2>
+    <button id="botaoCarta4">Desbloquear</button>
+</div>
 
             <div class="carta bloqueada">
                 <span>🔒</span>
@@ -80,7 +81,8 @@ botaoComecar.addEventListener("click", function() {
     document.getElementById("botaoCarta3").addEventListener("click", function() {
     iniciarCarta3();
 });
-    
+    document.getElementById("botaoCarta4").addEventListener("click", function() {
+    iniciarCarta4();
 });
 
 
@@ -348,3 +350,65 @@ function abrirCarta3() {
         location.reload();
     });
 }
+function iniciarCarta4() {
+    const telaCartas = document.querySelector(".tela-cartas");
+
+    telaCartas.innerHTML = `
+        <div class="missao botao-fujao">
+            <h1>Antes de abrir essa carta... 🤭</h1>
+
+            <p>
+                Clique no botão para desbloquear sua cartinha 😌💙
+            </p>
+
+            <button id="botaoFujao">
+                Clique aqui 💌
+            </button>
+        </div>
+    `;
+
+    const botao = document.getElementById("botaoFujao");
+
+    botao.addEventListener("mouseover", function() {
+        const largura = window.innerWidth - botao.offsetWidth - 40;
+        const altura = window.innerHeight - botao.offsetHeight - 40;
+
+        const novaPosicaoX = Math.random() * largura;
+        const novaPosicaoY = Math.random() * altura;
+
+        botao.style.position = "fixed";
+        botao.style.left = novaPosicaoX + "px";
+        botao.style.top = novaPosicaoY + "px";
+    });
+
+    botao.addEventListener("click", function() {
+        abrirCarta4();
+    });
+}
+ function abrirCarta4() {
+    const telaCartas = document.querySelector(".tela-cartas");
+
+    telaCartas.innerHTML = `
+        <div class="carta-aberta">
+            <div class="envelope">
+                💌
+            </div>
+
+            <div class="mensagem-carta">
+                <h1>Para quando você precisar sorrir 😄💙</h1>
+
+                <p>
+                    Aqui vai entrar a mensagem da Carta 4.
+                </p>
+
+                <button id="voltarCartas4">
+                    Voltar para as cartinhas 💙
+                </button>
+            </div>
+        </div>
+    `;
+
+    document.getElementById("voltarCartas4").addEventListener("click", function() {
+        location.reload();
+    });
+ }   
