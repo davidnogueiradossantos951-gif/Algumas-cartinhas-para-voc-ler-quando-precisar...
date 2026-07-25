@@ -1216,9 +1216,9 @@ function abrirCarta8() {
                     Eu te amo muito, minha Barbie. 🤭💙
                 </p>
 
-                <button onclick="location.reload()">
-                    Voltar para as cartinhas 💙
-                </button>
+                <button id="voltarCartas8">
+    Voltar para as cartinhas 💙
+</button>
 
             </div>
 
