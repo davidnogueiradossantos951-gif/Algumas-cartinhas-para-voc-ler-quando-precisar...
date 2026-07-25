@@ -455,7 +455,7 @@ h2 {
 #mapaMinecraft {
     width: 300px;
     height: 240px;
-    margin: 30px auto;
+    margin: 30px auto 45px;
 
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -568,11 +568,11 @@ h2 {
 #bauMinecraft {
     position: absolute;
 
-    left: 80%;
-    top: 75%;
+    left: 240px;
+    top: 180px;
 
-    width: 20%;
-    height: 25%;
+    width: 60px;
+    height: 60px;
 
     display: flex;
     align-items: center;
@@ -627,8 +627,8 @@ h2 {
 #flor2 {
     position: absolute;
 
-    width: 20%;
-    height: 25%;
+    width: 60px;
+    height: 60px;
 
     display: flex;
     align-items: center;
@@ -640,21 +640,21 @@ h2 {
 }
 
 #diamante1 {
-    left: 40%;
-    top: 0%;
+    left: 120px;
+    top: 0;
 }
 
 #diamante2 {
-    left: 40%;
-    top: 50%;
+    left: 120px;
+    top: 120px;
 }
 
 #flor1 {
-    left: 0%;
-    top: 50%;
+    left: 0;
+    top: 120px;
 }
 
 #flor2 {
-    left: 60%;
-    top: 25%;
+    left: 180px;
+    top: 60px;
 }
