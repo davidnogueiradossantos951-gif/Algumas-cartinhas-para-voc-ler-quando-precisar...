@@ -818,7 +818,7 @@ function iniciarCarta7() {
     setTimeout(function() {
         abrirCarta7();
     }, 2000);
-                }    
+                    
                 }
 
             } else {
