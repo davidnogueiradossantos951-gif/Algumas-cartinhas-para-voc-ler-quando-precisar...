@@ -64,10 +64,11 @@ botaoComecar.addEventListener("click", function() {
     <h2>Abra quando quiser saber o quanto eu te amo</h2>
     <button id="botaoCarta9">Desbloquear</button>
 </div>
-            <div class="carta bloqueada">
-                <span>🔒</span>
-                <h2>Uma carta secreta...</h2>
-            </div>
+            <div class="carta bloqueada" id="carta10">
+    <span>🔒</span>
+    <h2>Uma carta secreta 🤫💙</h2>
+    <button id="botaoCarta10">Desbloquear</button>
+</div>
         </div>
     `;
 
@@ -100,6 +101,9 @@ botaoComecar.addEventListener("click", function() {
 });
     document.getElementById("botaoCarta9").addEventListener("click", function() {
     iniciarCarta9();
+});
+    document.getElementById("botaoCarta10").addEventListener("click", function() {
+    iniciarCarta10();
 });
     
 });
@@ -1356,6 +1360,27 @@ function abrirCarta9() {
                 </button>
 
             </div>
+
+        </div>
+    `;
+}
+function iniciarCarta10() {
+    const telaCartas = document.querySelector(".tela-cartas");
+
+    telaCartas.innerHTML = `
+        <div class="missao secreta-missao">
+
+            <h1>Você chegou ao final... 🔐💙</h1>
+
+            <p>
+                Mas talvez esta não seja apenas mais uma missão... 👀
+            </p>
+
+            <p>
+                Todas as missões anteriores deixaram algo para trás.
+                <br><br>
+                Talvez você precise lembrar de tudo que viveu até aqui... 🥺💙
+            </p>
 
         </div>
     `;
