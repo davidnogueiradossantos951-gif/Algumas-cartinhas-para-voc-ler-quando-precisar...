@@ -817,14 +817,15 @@ function iniciarCarta7() {
 
                 if (acertos >= 15) {
 
-                    jogoAtivo = false;
+    jogoAtivo = false;
 
-                    document.getElementById("resultadoFelicidade").innerHTML =
-                        "Você encheu a barra da felicidade! 🎉💙✨";
+    document.getElementById("resultadoFelicidade").innerHTML =
+        "Você encheu a barra da felicidade! 🎉💙✨<br><br>" +
+        "Sua cartinha está desbloqueada! 💌";
 
-                    setTimeout(function() {
-                        abrirCarta7();
-                    }, 2000);
+    setTimeout(function() {
+        abrirCarta7();
+    }, 2000);
                 }
 
             } else {
@@ -859,4 +860,47 @@ function iniciarCarta7() {
             clearInterval(intervaloEmojis);
         }
     }, 700);
+}
+function abrirCarta7() {
+    const telaCartas = document.querySelector(".tela-cartas");
+
+    telaCartas.innerHTML = `
+        <div class="carta-aberta">
+            <div class="envelope">
+                💌
+            </div>
+
+            <div class="mensagem-carta">
+                <h1>Para quando você estiver feliz 🎉💙</h1>
+
+                <p>
+                    Meu amor,<br><br>
+
+                    Se você está lendo essa carta, então provavelmente está feliz... e eu espero que essa felicidade esteja sendo tão grande quanto o sorriso que eu estou imaginando no seu rosto agora. 😄💙<br><br>
+
+                    Eu queria poder estar aí do seu lado nesse momento, vendo você sorrir e comemorando junto com você. Porque, mesmo que a sua felicidade não tenha nada a ver comigo, eu ainda quero fazer parte dos seus momentos felizes. ❤️<br><br>
+
+                    Sabe, uma das coisas que eu mais gosto é imaginar você feliz. Gosto de pensar que, em algum momento do seu dia, eu consegui arrancar um sorriso seu, mesmo que tenha sido fazendo alguma besteira ou falando alguma coisa completamente sem sentido. 🤭😂<br><br>
+
+                    E eu quero que você saiba que a sua felicidade também é importante para mim. Quando você está feliz, eu fico feliz junto. 🥺💙<br><br>
+
+                    Então aproveita esse momento. Sorria, comemore e guarde essa felicidade com carinho. ✨<br><br>
+
+                    E quando você estiver feliz, lembra que existe alguém aqui que quer continuar fazendo parte dos seus momentos bons, dos seus momentos ruins e de todos os momentos que ainda vamos viver juntos. ❤️<br><br>
+
+                    Ah, e parabéns por ter conseguido completar a missão! 😂🎉<br><br>
+
+                    Eu fiz você ficar caçando emojis pela tela inteira só para chegar até essa cartinha. 🤭💙<br><br>
+
+                    Espero que essa missão tenha deixado você ainda mais feliz.<br><br>
+
+                    Eu te amo muito, minha Barbie. 💙❤️
+                </p>
+
+                <button onclick="location.reload()">
+                    Voltar para as cartinhas 💙
+                </button>
+            </div>
+        </div>
+    `;
 }
