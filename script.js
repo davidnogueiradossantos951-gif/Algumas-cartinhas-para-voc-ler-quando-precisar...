@@ -35,10 +35,11 @@ botaoComecar.addEventListener("click", function() {
     <button id="botaoCarta4">Desbloquear</button>
 </div>
 
-            <div class="carta bloqueada">
-                <span>🔒</span>
-                <h2>Abra quando precisar de um abraço</h2>
-            </div>
+            <div class="carta bloqueada" id="carta5">
+    <span>🔒</span>
+    <h2>Abra quando precisar de um abraço</h2>
+    <button id="botaoCarta5">Desbloquear</button>
+</div>
 
             <div class="carta bloqueada">
                 <span>🔒</span>
@@ -82,7 +83,10 @@ botaoComecar.addEventListener("click", function() {
     document.getElementById("botaoCarta4").addEventListener("click", function() {
     iniciarCarta4();
 });
-
+   document.getElementById("botaoCarta5").addEventListener("click", function() {
+    iniciarCarta5();
+});
+    
 });
 
 function iniciarCarta1() {
@@ -452,4 +456,112 @@ botao.onclick = function() {
         </div>
     `;
     }
+}
+function iniciarCarta5() {
+    const telaCartas = document.querySelector(".tela-cartas");
+
+    telaCartas.innerHTML = `
+        <div class="missao quebra-cabeca">
+            <h1>Antes de abrir essa carta... 🤭</h1>
+
+            <p>
+                Existe uma mensagem escondida aqui... 🧩💙<br>
+                Monte a frase correta para desbloquear sua cartinha.
+            </p>
+
+            <div id="palavras"></div>
+
+            <p id="resultadoQuebraCabeca"></p>
+        </div>
+    `;
+
+    let fraseCorreta = [
+        "Se",
+        "eu",
+        "pudesse,",
+        "te",
+        "daria",
+        "um",
+        "abraço",
+        "agora"
+    ];
+
+    let palavras = [...fraseCorreta];
+
+    palavras.sort(() => Math.random() - 0.5);
+
+    const container = document.getElementById("palavras");
+    let resposta = [];
+
+    palavras.forEach(function(palavra) {
+        const botao = document.createElement("button");
+
+        botao.innerText = palavra;
+
+        botao.addEventListener("click", function() {
+            resposta.push(palavra);
+            botao.style.display = "none";
+
+            const proximaPalavra = fraseCorreta[resposta.length - 1];
+
+            if (palavra !== proximaPalavra) {
+                document.getElementById("resultadoQuebraCabeca").innerText =
+                    "Errado 😭😂 As palavras voltaram a se esconder!";
+
+                setTimeout(function() {
+                    iniciarCarta5();
+                }, 1500);
+
+                return;
+            }
+
+            if (resposta.length === fraseCorreta.length) {
+                document.getElementById("resultadoQuebraCabeca").innerHTML =
+                    "Você conseguiu 😭💙<br>Agora pode abrir sua cartinha! 🤗💌";
+
+                setTimeout(function() {
+                    abrirCarta5();
+                }, 1500);
+            }
+        });
+
+        container.appendChild(botao);
+    });
+}
+function abrirCarta5() {
+    const telaCartas = document.querySelector(".tela-cartas");
+
+    telaCartas.innerHTML = `
+        <div class="carta-aberta">
+            <div class="envelope">
+                💌
+            </div>
+
+            <div class="mensagem-carta">
+                <h1>Para quando você precisar de um abraço 🤗💙</h1>
+
+                <p>
+                    Meu amor,<br><br>
+
+                    Se você está lendo essa carta, então provavelmente está precisando de um abraço... então imagine que eu estou aí agora, bem pertinho de você, te dando aquele abraço apertado que faz a gente esquecer um pouquinho de tudo. 🤗💙<br><br>
+
+                    Eu queria poder aparecer do seu lado sempre que você precisasse. Poder te abraçar quando você estivesse triste, quando estivesse cansada ou simplesmente quando quisesse ficar juntinha de mim. ❤️<br><br>
+
+                    Mas, como eu não posso estar aí nesse exato momento, espero que essas palavras consigam te dar pelo menos um pouquinho da sensação de que eu estou pertinho. 💙<br><br>
+
+                    Então fecha os olhos por alguns segundos e imagina eu te abraçando bem forte...<br><br>
+
+                    Pronto. Agora você acabou de ganhar um abraço meu, mesmo que de longe. 🤗❤️<br><br>
+
+                    E quando eu estiver aí com você, pode ter certeza que eu vou compensar todos os abraços que você precisou e eu não pude te dar. 😌💙<br><br>
+
+                    Eu te amo muito, minha Barbie. 🤭❤️
+                </p>
+
+                <button onclick="location.reload()">
+                    Voltar para as cartinhas 💙
+                </button>
+            </div>
+        </div>
+    `;
 }
