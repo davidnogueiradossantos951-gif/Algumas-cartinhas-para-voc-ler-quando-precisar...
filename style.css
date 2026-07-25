@@ -339,3 +339,74 @@ h2 {
 .opcao-bonita:active {
     transform: scale(0.96);
 }
+.barra-container {
+    width: 90%;
+    max-width: 500px;
+    height: 28px;
+    margin: 25px auto 10px;
+
+    background: rgba(255, 255, 255, 0.12);
+    border: 2px solid rgba(255, 255, 255, 0.35);
+    border-radius: 30px;
+
+    overflow: hidden;
+    position: relative;
+}
+
+#barraFelicidade {
+    width: 0%;
+    height: 100%;
+
+    background: linear-gradient(
+        90deg,
+        #4facfe,
+        #00f2fe,
+        #a8ff78
+    );
+
+    border-radius: 30px;
+
+    transition: width 0.5s ease;
+
+    position: relative;
+}
+
+#barraFelicidade::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+
+    width: 100%;
+    height: 100%;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.7),
+        transparent
+    );
+
+    animation: brilhoBarra 2s infinite;
+}
+
+@keyframes brilhoBarra {
+    0% {
+        left: -100%;
+    }
+
+    100% {
+        left: 100%;
+    }
+}
+
+#contadorFelicidade {
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+#resultadoFelicidade {
+    min-height: 40px;
+    margin-top: 20px;
+    font-size: 20px;
+}
