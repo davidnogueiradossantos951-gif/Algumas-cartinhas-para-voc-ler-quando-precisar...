@@ -384,8 +384,14 @@ function iniciarCarta4() {
 
             botao.style.position = "static";
 
+            
             botao.removeEventListener("touchstart", fugir);
-            botao.addEventListener("click", abrirCarta4);
+
+botao.innerText = "Abrir cartinha 💌";
+
+botao.onclick = function() {
+    abrirCarta4();
+};;
 
             return;
         }
@@ -400,10 +406,9 @@ function iniciarCarta4() {
 
     botao.addEventListener("mouseover", fugir);
 
-    botao.addEventListener("touchstart", function(event) {
-        event.preventDefault();
-        fugir();
-    });
+    botao.addEventListener("touchstart", function() {
+    fugir();
+});
     function abrirCarta4() {
     const telaCartas = document.querySelector(".tela-cartas");
 
