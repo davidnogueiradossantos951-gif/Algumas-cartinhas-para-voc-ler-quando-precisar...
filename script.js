@@ -1257,3 +1257,22 @@ function abrirCarta8() {
         </div>
     `;
 }
+function iniciarCarta9() {
+    const telaCartas = document.querySelector(".tela-cartas");
+
+    telaCartas.innerHTML = `
+        <div class="missao amor-missao">
+
+            <h1>Missão 9 💙</h1>
+
+            <p>
+                Clique no coração e descubra até onde vai o meu amor por você. ❤️
+            </p>
+
+            <div id="coracaoAmor">❤️</div>
+
+            <p id="contadorAmor">0%</p>
+
+        </div>
+    `;
+}
