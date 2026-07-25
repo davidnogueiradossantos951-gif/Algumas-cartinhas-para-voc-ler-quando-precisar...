@@ -59,11 +59,11 @@ botaoComecar.addEventListener("click", function() {
     <button id="botaoCarta8">Desbloquear</button>
 </div>
 
-            <div class="carta bloqueada">
-                <span>🔒</span>
-                <h2>Abra quando quiser saber o quanto eu te amo</h2>
-            </div>
-
+            <div class="carta bloqueada" id="carta9">
+    <span>🔒</span>
+    <h2>Abra quando quiser saber o quanto eu te amo</h2>
+    <button id="botaoCarta9">Desbloquear</button>
+</div>
             <div class="carta bloqueada">
                 <span>🔒</span>
                 <h2>Uma carta secreta...</h2>
@@ -97,6 +97,9 @@ botaoComecar.addEventListener("click", function() {
 });
    document.getElementById("botaoCarta8").addEventListener("click", function() {
     iniciarCarta8();
+});
+    document.getElementById("botaoCarta9").addEventListener("click", function() {
+    iniciarCarta9();
 });
     
 });
@@ -1254,3 +1257,63 @@ function abrirCarta8() {
         </div>
     `;
 }
+function iniciarCarta9() {
+    const telaCartas = document.querySelector(".tela-cartas");
+
+    telaCartas.innerHTML = `
+        <div class="missao amor-missao">
+
+            <h1>Missão 9 💙</h1>
+
+            <p>
+                Clique no coração e descubra até onde vai o meu amor por você. ❤️
+            </p>
+
+            <div id="coracaoAmor">❤️</div>
+
+            <div class="barra-amor-container">
+                <div id="barraAmor"></div>
+            </div>
+
+            <p id="contadorAmor">0%</p>
+
+            <p id="mensagemAmor"></p>
+
+        </div>
+    `;
+
+    let cliquesAmor = 0;
+    const cliquesNecessarios = 30;
+
+    const coracao = document.getElementById("coracaoAmor");
+
+    coracao.addEventListener("click", function() {
+
+        cliquesAmor++;
+
+        const porcentagem =
+            (cliquesAmor / cliquesNecessarios) * 100;
+
+        document.getElementById("barraAmor").style.width =
+            porcentagem + "%";
+
+        document.getElementById("contadorAmor").innerText =
+            Math.round(porcentagem) + "%";
+
+        coracao.style.transform = "scale(1.3)";
+
+        setTimeout(function() {
+            coracao.style.transform = "scale(1)";
+        }, 150);
+
+        if (cliquesAmor >= cliquesNecessarios) {
+
+            document.getElementById("mensagemAmor").innerHTML =
+                "Você conseguiu encher o coração! ❤️✨<br><br>" +
+                "Mas, sinceramente... ainda faltaria espaço para medir o quanto eu te amo. 🥺💙";
+
+            setTimeout(function() {
+                abrirCarta9();
+            }, 2500);
+        }
+    });
