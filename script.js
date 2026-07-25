@@ -312,9 +312,29 @@ function abrirCarta3() {
 
             <div class="mensagem-carta">
                 <h1>Para quando você estiver brava comigo 🤭💙</h1>
+                
+                    <p>
+    Meu amor,<br><br>
 
-                <p>
-                    Aqui vai entrar a mensagem da Carta 3.
+    Se você está lendo essa carta, provavelmente está brava comigo... então, antes de qualquer coisa: respira 😭🤭<br><br>
+
+    Eu sei que às vezes eu posso fazer alguma coisa que te irrita, falar alguma besteira ou simplesmente ser um completo idiota. E, mesmo que eu nem sempre perceba na hora, eu nunca quero que você fique mal por minha causa. ❤️<br><br>
+
+    Se eu fiz alguma coisa que te magoou, me desculpa. De verdade.<br><br>
+
+    Eu posso ser teimoso, posso errar e às vezes posso não saber exatamente o que falar... mas uma coisa eu sei: eu nunca quero perder você por causa de uma briga.<br><br>
+
+    Então, quando você terminar de ler isso, talvez você ainda esteja brava comigo. E tudo bem 🤭<br><br>
+
+    Mas, quando você estiver pronta...<br><br>
+
+    vem falar comigo.<br><br>
+
+    Porque, mesmo quando a gente briga, eu ainda amo você. E, sinceramente, você sabe que não consegue ficar brava comigo para sempre 😌💙<br><br>
+
+    Agora pode parar de fazer essa carinha brava, minha Barbie 🤭❤️<br><br>
+
+    Eu te amo.
                 </p>
 
                 <button id="voltarCartas3">
