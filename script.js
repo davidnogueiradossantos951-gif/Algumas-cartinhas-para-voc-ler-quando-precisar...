@@ -369,7 +369,7 @@ function iniciarCarta4() {
 
     const botao = document.getElementById("botaoFujao");
 
-    botao.addEventListener("mouseover", function() {
+    function fugir() {
         const largura = window.innerWidth - botao.offsetWidth - 40;
         const altura = window.innerHeight - botao.offsetHeight - 40;
 
@@ -379,36 +379,16 @@ function iniciarCarta4() {
         botao.style.position = "fixed";
         botao.style.left = novaPosicaoX + "px";
         botao.style.top = novaPosicaoY + "px";
+    }
+
+    botao.addEventListener("mouseover", fugir);
+
+    botao.addEventListener("touchstart", function(event) {
+        event.preventDefault();
+        fugir();
     });
 
     botao.addEventListener("click", function() {
         abrirCarta4();
     });
 }
- function abrirCarta4() {
-    const telaCartas = document.querySelector(".tela-cartas");
-
-    telaCartas.innerHTML = `
-        <div class="carta-aberta">
-            <div class="envelope">
-                💌
-            </div>
-
-            <div class="mensagem-carta">
-                <h1>Para quando você precisar sorrir 😄💙</h1>
-
-                <p>
-                    Aqui vai entrar a mensagem da Carta 4.
-                </p>
-
-                <button id="voltarCartas4">
-                    Voltar para as cartinhas 💙
-                </button>
-            </div>
-        </div>
-    `;
-
-    document.getElementById("voltarCartas4").addEventListener("click", function() {
-        location.reload();
-    });
- }   
