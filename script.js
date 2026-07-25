@@ -196,7 +196,27 @@ function abrirCarta2() {
                 <h1>Para quando você estiver com saudade de mim 💙</h1>
 
                 <p>
-                    Aqui vai entrar a mensagem da Carta 2.
+                    <p>
+    Meu amor,<br><br>
+
+    Se você está lendo essa carta, então provavelmente está sentindo saudade de mim... e eu espero que, de alguma forma, essas palavras façam você se sentir um pouquinho mais perto de mim. 💙<br><br>
+
+    Eu também sinto saudade de você. Saudade das nossas conversas, das nossas brincadeiras, dos nossos momentos e até das coisas mais simples que a gente faz juntos.<br><br>
+
+    Às vezes eu queria poder simplesmente aparecer aí do seu lado, te dar um abraço apertado e ficar juntinho de você sem precisar dizer nada. 🤍<br><br>
+
+    Mas enquanto eu não posso fazer isso, espero que você lembre que, mesmo quando eu não estou fisicamente perto, meu coração continua pertinho do seu.<br><br>
+
+    Então, quando sentir saudade de mim, lembra que provavelmente eu também estou pensando em você. 🤭❤️<br><br>
+
+    E se a saudade apertar muito...<br><br>
+
+    pode me chamar.<br><br>
+
+    Sua Barbie está sempre aqui. 😌💙<br><br>
+
+    Eu te amo muito.
+</p>
                 </p>
 
                 <button id="voltarCartas2">
