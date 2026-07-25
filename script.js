@@ -924,6 +924,8 @@ function iniciarCarta8() {
             <div id="mapaMinecraft">
 
                 <div id="jogadorMinecraft">🧍‍♀️</div>
+                
+                <div id="bauMinecraft">📦</div>
 
                 <div class="bloco grama"></div>
                 <div class="bloco grama"></div>
@@ -975,6 +977,7 @@ function iniciarCarta8() {
 
     let posicaoX = 0;
     let posicaoY = 0;
+    let jogoConcluido = false;
 
     const tamanhoBloco = 60;
 
@@ -1007,9 +1010,35 @@ function iniciarCarta8() {
         setTimeout(function() {
             jogador.style.transform = "scale(1)";
         }, 150);
+        
+        verificarBau();
     }
 
+         function verificarBau() {
 
+    const bau = document.getElementById("bauMinecraft");
+
+    const jogadorX = posicaoX;
+    const jogadorY = posicaoY;
+
+    // O baú fica na última posição do mapa
+    const bauX = 4;
+    const bauY = 3;
+
+    if (jogadorX === bauX && jogadorY === bauY) {
+
+        jogoConcluido = true;
+
+        document.getElementById("mensagemMinecraft").innerHTML =
+            "Você encontrou o baú secreto! 📦💎✨<br><br>" +
+            "Você descobriu o segredo desse mundo! 💙";
+
+        setTimeout(function() {
+            abrirCarta8();
+        }, 2500);
+    }
+         }
+  
     // BOTÃO PARA CIMA
 
     document.getElementById("cima").addEventListener("click", function() {
