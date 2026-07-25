@@ -66,3 +66,64 @@ h2 {
     background: rgba(255, 255, 255, 0.2);
     transform: scale(1.05);
 }
+.tela-cartas {
+    position: fixed;
+    inset: 0;
+    overflow-y: auto;
+    padding: 40px 20px;
+    text-align: center;
+    background:
+        radial-gradient(circle at 20% 20%, rgba(40, 80, 160, 0.25), transparent 30%),
+        radial-gradient(circle at 80% 70%, rgba(70, 100, 200, 0.18), transparent 30%),
+        #07152f;
+    animation: aparecer 1s ease-in-out;
+}
+
+.tela-cartas h1 {
+    margin-bottom: 10px;
+}
+
+.tela-cartas p {
+    font-size: 18px;
+    margin-bottom: 35px;
+}
+
+.cartas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.carta {
+    padding: 25px 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.07);
+    transition: 0.3s;
+}
+
+.carta:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.carta span {
+    font-size: 35px;
+}
+
+.carta h2 {
+    font-size: 20px;
+    margin: 15px 0;
+}
+
+.carta button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    background: white;
+    color: #07152f;
+    cursor: pointer;
+    font-family: Georgia, serif;
+}
