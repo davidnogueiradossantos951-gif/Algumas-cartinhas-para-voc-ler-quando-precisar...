@@ -650,14 +650,16 @@ function iniciarCarta6() {
 
         etapa.opcoes.forEach(function(frase, indice) {
             const botao = document.createElement("button");
-
+            
+            botao.className = "opcao-bonita";
+            
             botao.innerText = frase;
-
+            
             botao.addEventListener("click", function() {
 
                 if (indice === etapa.correta) {
                     mensagemCompleta += etapa.mensagem;
-
+                    
                     document.getElementById("mensagemEscondida6").innerText =
                         mensagemCompleta;
 
