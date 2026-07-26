@@ -1370,18 +1370,37 @@ function iniciarCarta10() {
     telaCartas.innerHTML = `
         <div class="missao secreta-missao">
 
-            <h1>Você chegou ao final... 🔐💙</h1>
+            <h1>Você chegou até aqui... 🔐💙</h1>
 
             <p>
-                Mas talvez esta não seja apenas mais uma missão... 👀
+                Então talvez você tenha percebido uma coisa... 👀
             </p>
 
             <p>
-                Todas as missões anteriores deixaram algo para trás.
-                <br><br>
-                Talvez você precise lembrar de tudo que viveu até aqui... 🥺💙
+                Cada missão tinha uma história.<br>
+                Cada carta tinha uma mensagem.<br>
+                E cada momento tinha um pedacinho de nós. 🥺💙
             </p>
+
+            <p>
+                Mas existe uma última coisa escondida.
+            </p>
+
+            <button id="botaoSegredo">
+                Descobrir o segredo ✨
+            </button>
+
+            <p id="mensagemSegredo"></p>
 
         </div>
     `;
+
+    document.getElementById("botaoSegredo").addEventListener("click", function() {
+
+        document.getElementById("mensagemSegredo").innerHTML =
+            "Você achou que a última carta seria apenas mais uma missão? 👀💙<br><br>" +
+            "Então você estava errada... 🤭✨<br><br>" +
+            "O verdadeiro segredo sempre foi você. ❤️";
+
+    });
 }
