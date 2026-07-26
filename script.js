@@ -1394,6 +1394,21 @@ function iniciarCarta10() {
 
         </div>
     `;
+    function criarCoracaoFinal() {
+
+    const coracao = document.createElement("div");
+
+    coracao.innerText = "💙";
+    coracao.className = "coracao-final";
+
+    coracao.style.left = Math.random() * 100 + "vw";
+
+    document.body.appendChild(coracao);
+
+    setTimeout(function() {
+        coracao.remove();
+    }, 5000);
+    }
 
     document.getElementById("botaoSegredo").addEventListener("click", function() {
 
@@ -1407,6 +1422,14 @@ function iniciarCarta10() {
         "Mas ainda existe uma última coisa para você descobrir. ✨";
 
     mensagem.style.animation = "aparecerFinal 2s ease";
+
+        for (let i = 0; i < 25; i++) {
+
+    setTimeout(function() {
+        criarCoracaoFinal();
+    }, i * 150);
+
+        }
 
    });
 }
