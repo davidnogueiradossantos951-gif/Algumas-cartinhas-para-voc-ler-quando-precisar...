@@ -1532,3 +1532,21 @@ document.getElementById("abrirMensagemFinal").addEventListener("click", function
 
   });
 }
+function tocarPausarMusica() {
+
+    const musica = document.getElementById("musica");
+    const botao = document.getElementById("botaoMusica");
+
+    if (musica.paused) {
+
+        musica.play();
+        botao.innerText = "⏸️";
+
+    } else {
+
+        musica.pause();
+        botao.innerText = "▶";
+
+    }
+
+}
