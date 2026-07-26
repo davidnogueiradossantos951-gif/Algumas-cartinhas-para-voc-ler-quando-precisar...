@@ -1532,15 +1532,23 @@ document.getElementById("abrirMensagemFinal").addEventListener("click", function
 
   });
 }
-const musica = document.getElementById("musica");
 const botaoMusica = document.getElementById("botaoMusica");
+const musica = document.getElementById("musica");
 
-botaoMusica.onclick = function() {
+botaoMusica.addEventListener("click", function() {
+
     if (musica.paused) {
-        musica.play();
-        botaoMusica.innerText = "⏸️";
+        musica.play()
+            .then(function() {
+                botaoMusica.innerText = "⏸️";
+            })
+            .catch(function(erro) {
+                console.log("Erro ao tocar a música:", erro);
+            });
+
     } else {
         musica.pause();
         botaoMusica.innerText = "▶️";
     }
-};
+
+});
