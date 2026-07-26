@@ -837,14 +837,6 @@ h2 {
     color: white;
 }
 
-.final-coracao {
-    font-size: 110px;
-
-    animation: pulsarFinal 1.5s infinite ease-in-out;
-
-    margin-bottom: 30px;
-}
-
 .final-secreto h1 {
     font-size: 38px;
     margin-bottom: 25px;
@@ -881,6 +873,20 @@ h2 {
     transform: scale(1.08);
 }
 
+.final-coracao {
+    position: relative;
+
+    font-size: 110px;
+
+    margin-bottom: 30px;
+
+    animation:
+        pulsarFinal 1.5s infinite ease-in-out,
+        brilhoFinal 2s infinite ease-in-out;
+
+    filter: drop-shadow(0 0 12px rgba(255, 80, 120, 0.6));
+}
+
 @keyframes pulsarFinal {
 
     0%, 100% {
@@ -888,7 +894,19 @@ h2 {
     }
 
     50% {
-        transform: scale(1.2);
+        transform: scale(1.18);
+    }
+
+}
+
+@keyframes brilhoFinal {
+
+    0%, 100% {
+        filter: drop-shadow(0 0 10px rgba(255, 80, 120, 0.4));
+    }
+
+    50% {
+        filter: drop-shadow(0 0 35px rgba(255, 80, 120, 0.9));
     }
 
 }
