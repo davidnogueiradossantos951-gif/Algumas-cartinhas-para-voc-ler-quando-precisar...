@@ -1418,10 +1418,15 @@ function iniciarCarta10() {
     botao.style.display = "none";
 
     mensagem.innerHTML =
-        "O segredo nunca esteve escondido em nenhuma das missões... 👀💙<br><br>" +
-        "Mas ainda existe uma última coisa para você descobrir. ✨";
+    "O segredo nunca esteve escondido em nenhuma das missões... 👀💙<br><br>" +
+    "Ele estava em cada detalhe, cada palavra e cada momento que eu preparei para você. 🥺✨<br><br>" +
+    "Mas ainda existe uma última coisa para você descobrir... ❤️";
 
     mensagem.style.animation = "aparecerFinal 2s ease";
+
+        setTimeout(function() {
+    abrirCarta10();
+}, 7000);
 
         for (let i = 0; i < 25; i++) {
 
@@ -1432,4 +1437,32 @@ function iniciarCarta10() {
         }
 
    });
+}
+function abrirCarta10() {
+    const telaCartas = document.querySelector(".tela-cartas");
+
+    telaCartas.innerHTML = `
+        <div class="final-secreto">
+
+            <div class="final-coracao">
+                ❤️
+            </div>
+
+            <h1>Você encontrou o segredo... ✨</h1>
+
+            <p>
+                Todas essas missões foram feitas pensando em você. 💙
+            </p>
+
+            <p>
+                Cada carta, cada mensagem e cada detalhe...
+                tudo foi uma pequena forma de te mostrar o quanto você é importante para mim. 🥺❤️
+            </p>
+
+            <button id="abrirMensagemFinal">
+                Abrir minha última mensagem 💌
+            </button>
+
+        </div>
+    `;
 }
