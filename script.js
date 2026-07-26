@@ -1535,6 +1535,12 @@ document.getElementById("abrirMensagemFinal").addEventListener("click", function
 const musica = document.getElementById("musica");
 const botaoMusica = document.getElementById("botaoMusica");
 
-botaoMusica.addEventListener("click", function() {
-    musica.play();
-});
+botaoMusica.onclick = function() {
+    if (musica.paused) {
+        musica.play();
+        botaoMusica.innerText = "⏸️";
+    } else {
+        musica.pause();
+        botaoMusica.innerText = "▶️";
+    }
+};
