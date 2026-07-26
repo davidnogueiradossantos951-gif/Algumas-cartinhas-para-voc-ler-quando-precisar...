@@ -1397,10 +1397,16 @@ function iniciarCarta10() {
 
     document.getElementById("botaoSegredo").addEventListener("click", function() {
 
-        document.getElementById("mensagemSegredo").innerHTML =
-            "Você achou que a última carta seria apenas mais uma missão? 👀💙<br><br>" +
-            "Então você estava errada... 🤭✨<br><br>" +
-            "O verdadeiro segredo sempre foi você. ❤️";
+    const botao = document.getElementById("botaoSegredo");
+    const mensagem = document.getElementById("mensagemSegredo");
 
-    });
+    botao.style.display = "none";
+
+    mensagem.innerHTML =
+        "O segredo nunca esteve escondido em nenhuma das missões... 👀💙<br><br>" +
+        "Mas ainda existe uma última coisa para você descobrir. ✨";
+
+    mensagem.style.animation = "aparecerFinal 2s ease";
+
+   });
 }
