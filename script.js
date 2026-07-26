@@ -1532,23 +1532,3 @@ document.getElementById("abrirMensagemFinal").addEventListener("click", function
 
   });
 }
-const botaoMusica = document.getElementById("botaoMusica");
-const musica = document.getElementById("musica");
-
-botaoMusica.addEventListener("click", function() {
-
-    if (musica.paused) {
-        musica.play()
-            .then(function() {
-                botaoMusica.innerText = "⏸️";
-            })
-            .catch(function(erro) {
-                console.log("Erro ao tocar a música:", erro);
-            });
-
-    } else {
-        musica.pause();
-        botaoMusica.innerText = "▶️";
-    }
-
-});
