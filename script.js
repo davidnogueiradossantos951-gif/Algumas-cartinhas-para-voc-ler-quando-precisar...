@@ -1465,4 +1465,70 @@ function abrirCarta10() {
 
         </div>
     `;
+
+document.getElementById("abrirMensagemFinal").addEventListener("click", function() {
+
+    const final = document.querySelector(".final-secreto");
+
+    final.innerHTML = `
+        <div class="mensagem-final">
+
+            <div class="coracao-final-grande">
+                ❤️
+            </div>
+
+            <h1>Para você, meu amor 💙</h1>
+
+            <p>
+                Se você chegou até aqui, então você passou por todas as missões. 🥺💙
+            </p>
+
+            <p>
+                Cada uma delas foi feita pensando em você, no seu jeito e em tudo que eu sinto quando penso em nós dois. ❤️
+            </p>
+
+            <p>
+                Mas essa última é diferente.
+            </p>
+
+            <p>
+                Porque ela não é sobre um momento triste, sobre saudade, insegurança ou felicidade.
+            </p>
+
+            <p>
+                Ela é simplesmente sobre você. 💙
+            </p>
+
+            <p>
+                Eu queria que você soubesse que cada detalhe desse site foi feito com carinho. Cada missão, cada mensagem e cada pequeno detalhe foi uma forma de colocar um pedacinho do que eu sinto por você aqui. 🥺✨
+            </p>
+
+            <p>
+                E se algum dia você esquecer o quanto é importante para mim, volte aqui e lembre de tudo que encontrou pelo caminho. ❤️
+            </p>
+
+            <p>
+                O segredo nunca esteve escondido em uma senha ou em uma pista.
+            </p>
+
+            <p>
+                O segredo estava em cada detalhe que eu preparei pensando em você. 💙
+            </p>
+
+            <h2>
+                Eu te amo muito, minha Barbie. ❤️💙
+            </h2>
+
+            <p>
+                E essa é só uma pequena parte de tudo que ainda quero viver ao seu lado. 🥺✨
+            </p>
+
+            <button onclick="location.reload()">
+                Voltar ao início 💙
+            </button>
+
+        </div>
+    `;
+
+  });
 }
