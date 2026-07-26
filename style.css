@@ -954,3 +954,64 @@ h2 {
     }
 
         }
+.player-musica {
+    width: 300px;
+    margin: 35px auto 0;
+    padding: 20px;
+
+    text-align: center;
+
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(15px);
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 25px;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+
+    color: white;
+}
+
+.capa-musica img {
+    width: 180px;
+    height: 180px;
+
+    object-fit: cover;
+
+    border-radius: 18px;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
+}
+
+.player-musica h3 {
+    margin: 18px 0 5px;
+
+    font-size: 20px;
+}
+
+.player-musica p {
+    margin: 0 0 18px;
+
+    opacity: 0.75;
+}
+
+#botaoMusica {
+    width: 55px;
+    height: 55px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: white;
+    color: #333;
+
+    font-size: 22px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+#botaoMusica:hover {
+    transform: scale(1.1);
+}
