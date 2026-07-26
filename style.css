@@ -722,3 +722,67 @@ h2 {
         transform: scale(1);
     }
 }
+.secreta-missao {
+    position: fixed;
+    inset: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+    padding: 30px;
+
+    background:
+        radial-gradient(circle at center, rgba(80, 40, 150, 0.35), transparent 45%),
+        #050817;
+
+    overflow: hidden;
+}
+
+.secreta-missao h1 {
+    font-size: 42px;
+    animation: aparecerFinal 2s ease;
+}
+
+.secreta-missao p {
+    max-width: 650px;
+    font-size: 20px;
+    line-height: 1.7;
+    margin: 20px auto;
+}
+
+#botaoSegredo {
+    margin-top: 25px;
+    padding: 16px 32px;
+
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 30px;
+
+    background: rgba(255, 255, 255, 0.12);
+    color: white;
+
+    font-family: Georgia, serif;
+    font-size: 17px;
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+#botaoSegredo:hover {
+    transform: scale(1.08);
+    background: rgba(255, 255, 255, 0.25);
+}
+
+@keyframes aparecerFinal {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
